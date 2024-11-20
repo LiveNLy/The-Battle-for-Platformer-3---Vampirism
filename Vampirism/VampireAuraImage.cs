@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class VampireAuraImage : MonoBehaviour
 {
-    [SerializeField] private Character character;
+    [SerializeField] private Character _character;
 
     private void Update()
     {
-        transform.position = character.transform.position;
+        transform.position = _character.transform.position;
     }
 }

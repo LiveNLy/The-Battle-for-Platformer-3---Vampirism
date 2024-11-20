@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VampirismTimer : MonoBehaviour
 {
-    [SerializeField] private InputReader _inputReader;
+    [SerializeField] private Button _button;
     [SerializeField] private Image _auraImage;
     [SerializeField] private int _vampirismTimer = 6;
     [SerializeField] private int _cooldownTimer = 4;
@@ -25,12 +25,12 @@ public class VampirismTimer : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputReader.VampirismActivating += CoroutineStarter;
+        _button?.onClick.AddListener(CoroutineStarter);
     }
 
     private void OnDisable()
     {
-        _inputReader.VampirismActivating -= CoroutineStarter;
+        _button?.onClick.RemoveListener(CoroutineStarter);
     }
 
     private void CoroutineStarter()
